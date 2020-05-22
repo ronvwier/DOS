@@ -1,0 +1,285 @@
+
+
+
+
+
+
+
+
+
+                   ÚÄÄÄÄÄÄÄÄÄÄÄ¿   ÚÄÄ¿        ÚÄÄ¿
+                   ³ ÚÄÄÄÄÄÄÄ¿ À¿  ³  À¿      ÚÙ  ³
+                   ³ ³       À¿ ³  ³ Ú¿À¿    ÚÙÚ¿ ³
+                   ³ ³        ³ ³  ³ ³À¿À¿  ÚÙÚÙ³ ³
+                   ³ ³        ³ ³  ³ ³ À¿À¿ÚÙÚÙ ³ ³
+                   ³ ³        ³ ³  ³ ³  À¿ÀÙÚÙ  ³ ³
+                   ³ ³        ³ ³  ³ ³   ÀÄÄÙ   ³ ³
+                   ³ ³        ³ ³  ³ ³          ³ ³
+                   ³ ³       ÚÙ ³  ³ ³          ³ ³
+                   ³ ÀÄÄÄÄÄÄÄÙ ÚÙ  ³ ³          ³ ³
+                   ÀÄÄÄÄÄÄÄÄÄÄÄÙ   ÀÄÙ          ÀÄÙ
+
+
+
+
+
+
+
+
+
+
+
+                   ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                   ³               Dos Menu                ³
+                   ³              versie 3.5               ³
+                   ³                                       ³
+                   ³      (c) 1992, R.A. van Wier RI       ³
+                   ³      Alle rechten voorbehouden.       ³
+                   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+
+
+
+
+
+
+
+
+                   Gebruik en distributie van deze software voor niet-
+                   commercie‰le doeleinden is kosteloos toegestaan.
+
+    Handleiding    DM - Dos Menu                                              1
+    ---------------------------------------------------------------------------
+
+    Taak           Het oproepen van een menu voor het aansturen van programmas.
+                   Het menu kan dynamisch worden gewijzigd door het gebruik van
+                   de insert-toets voor het toevoegen van een keuze, de
+                   delete-toets voor het verwijderen van een keuze en de
+                   shift-F10 toets voor het wijzigen van de kenmerken van een
+                   keuze.
+
+                   De keuzes zijn ondergebracht in groepen (horizontale balk),
+                   die weer bestaan uit programma keuzes (vertikale menu's).
+
+                   Vanuit een menu kunnen andere menu's worden aangeroepen,
+                   elk menu is opgeslagen in een apart bestand.
+
+                   Na het uitvoeren van een keuze wordt automatisch
+                   teruggekeerd naar de directory en video mode die aktief
+                   waren voor het uitvoeren van de keuze.
+
+    Aanroep        DM [menunaam] [logo-file-naam]
+
+                   Menunaam is de naam van een menu bestand (.DM) dat al dan
+                   niet bestaat, zonder het meegeven van een menunaam wordt
+                   START gebruikt.
+
+                   Logo-file-naam is de naam van een tekstbestand dat op het
+                   scherm getoond wordt als achtergrond.
+
+    Toetsen        Enter    : Bevestig een menu keuze
+                              Bevestig een invoer scherm
+                   Esc      : Annuleer een keuze
+                              Verlaat een (sub) menu
+                   Insert   : Voeg een groep of keuze toe aan een menu
+                   Delete   : Verwijder een groep of keuze uit een menu
+                   Tab      : Ga naar een volgend veld
+                   Tab terug: Ga naar een voorgaand veld
+                   Pijltjes : Verplaats de cursor in de aangegeven richting
+                   F1       : Toon help informatie
+                   F3/Alt-F4: Sluit alle menu's af en ga terug naar DOS
+                   Shift-F10: Toon informatie over de keuze en geef eventueel
+                              een invoer scherm om deze te wijzigen
+                   Muis     : Drukken op linker toets=activeren keuze
+                              Drukken op rechter toets=Annuleer keuze
+
+    Informatie     Voor adres- en bestelinformatie zie INFO-RVW.DOC
+
+
+
+
+    Handleiding    DM - Dos Menu                                              2
+    ---------------------------------------------------------------------------
+
+    Keuzegroepen   Op de horizontale balk staan de z.g.n. keuze-groepen, d.m.v.
+                   de Insert toets kan een nieuwe groep worden toegevoegd.
+                   Met shift-F10 kan de naam worden gewijzigd.
+
+                   Onder de keuzegroepen hangen programmakeuzes die na het
+                   kiezen van de groep in een vertikaal menu worden getoond.
+
+    Programma      Programmakeuzes vallen altijd onder een groep en worden in
+    keuzes         een vertikaal menu getoond na het kiezen van de
+                   desbetreffende groep.
+
+                   Indien er maximaal 9 keuzes in een menu staan worden
+                   nummers getoond waarmee gekozen kan worden, net als met de
+                   in de titel opgenomen hoofdletters.
+
+                   De volgende gegevens behoren bij een programma keuze:
+
+            Titel: Deze wordt getoond op het scherm, alle ingetoetste
+                   hoofdletters in deze titel kunnen later worden gebruikt
+                   om een keuze te maken d.m.v. het intoetsen van de
+                   desbetreffende letter, een '-' geeft alleen een
+                   scheidingslijn.
+        Directory: De naam van de drive/directory waar het programma
+                   gestart moet worden. Dit zal meestal de directory
+                   zijn waar de bestanden staan.
+         Commando: De naam van het op te starten programma, e.v.t.
+                   voorafgegaan door een drive/directory aanduiding en
+                   gevolgd door parameters als vaste tekst of in de
+                   vorm %1 t/m %4 voor vragen.
+        Terugkeer: - Direct    na het einde van het programma is het
+                               menu meteen zichtbaar.
+                   - Na toets  na het einde van het programma wordt
+                               gevraagd om op een toets te drukken
+                               voor het menu getoond wordt.
+                   - Geen      na het einde van het programma wordt
+                               het menu niet meer getoond, dit is
+                               bijv. nodig na het Novell LOGOUT
+                               commando indien het menu op een Novell
+                               drive staat.
+           Vragen: Dit zijn de vragen die aan de gebruiker worden gesteld
+                   en waarbij het antwoord de tekst %1 t/m %4 in het
+                   commando vervangt.
+
+
+
+
+
+    Handleiding    DM - Dos Menu                                              3
+    ---------------------------------------------------------------------------
+
+    Aanroepen      Door als programmanaam "DM" op te geven en als parameter de
+    ander menu     naam van het andere menu bestand, kan naar een ander menu
+                   worden overgestapt. Deze optie kost geen extra geheugen.
+                   Als 2e parameter kan de naam van een logo file worden
+                   meegegeven.
+
+    DOS shell      Door als programmanaam "COMMAND" op te geven kan een
+                   uitstapje naar de DOS prompt worden geregeld.
+
+    Geheugen       DM neemt normaal 14K in beslag tijdens het draaien van een
+                   programma. Bij het aanroepen van een programma zonder
+                   terugkeer naar het menu is het geheugenverbruik 3K.
+                   Bij het gebruik van LoadHigh wordt DM geheel in het UMB
+                   geheugen geplaatst.
+
+    DOS 5.0        DM is geschikt voor de DOS 5.0 LOADHIGH optie, alle vanuit
+    LOADHIGH       DM gestarte programma's worden niet hoog geladen tenzij
+                   als keuze "LH programma" wordt opgegeven. Het verdient de
+                   voorkeur om DM te starten met LH DM.
+
+    Logo           Standaard wordt het C:>DM logo getoond, dit kan worden
+                   vervangen door een eigen logo door met een editor het
+                   bestand DMLOGO.TXT aan te maken. Daarna wordt de inhoud van
+                   dit bestand, of een opgegeven bestand, als logo op het
+                   scherm getoond.
+
+    TSR            TSR (residente) programma's kunnen vanuit DM worden gestart,
+    residente      dit zijn programma's die permanent aktief blijven om bijv.
+    programmas     een klok op scherm te tonen of die via een toetsaanslag
+                   kunnen worden geladen. Het laden van een TSR leidt wel tot
+                   fragmentering van het geheugen, tenzij LOADHIGH is gebruikt.
+
+    Naam           Indien Novell aanwezig is wordt de gebruikersnaam getoond,
+                   anders wordt de eventueel aanwezige environment variabele
+                   LOGIN_NAME getoond. De variabele LOGIN_NAME kan worden
+                   gevuld via het DOS SET LOGIN_NAME=xxxxxxxxxxx, maar niet
+                   vanuit DM!.
+
+
+
+
+
+
+
+
+
+
+    Handleiding    DM - Dos Menu                                              4
+    ---------------------------------------------------------------------------
+
+    Technische     Layout van de menu bestanden (.DM file):
+    details
+                   Versie nummer 1 byte met de waarde 2
+
+                   Records bestaande uit:
+
+                      ID veld van 1 byte met inhoud
+
+                         ID_GROEP   1
+                         ID_KEUZE   10
+                         ID_DIR     11
+                         ID_PROG    12
+                         ID_WACHT   13
+                         ID_VRAAG   31
+
+                      Gevolgd door een 1 byte LENGTE veld
+                      Gevolgd door een data veld ter grootte van LENGTE, bij
+                      tekstvelden altijd afgesloten met een binaire 0
+
+                   Structuur van het totale bestand:
+
+                      VERSIE
+                      GROEP 1
+
+                        KEUZE 1
+
+                          DIR/PROG/WACHT en n*VRAAG
+
+                        KEUZE 2 enz.
+
+                      GROEP 2 enz.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Handleiding    DM - Dos Menu                                              5
+    ---------------------------------------------------------------------------
+
+    Versie         Nieuwe mogelijkheden
+
+    3.5 sep 1992   - verbetering LoadHigh in OS/2 DOS box
+                   - naam logo file kan ook bij menu keuze worden opgegeven
+
+    3.4 mei 1992   - naam van logo file kan worden gespecificeerd bij aanroep
+
+    3.3 jan 1992   - nieuwe menu keuzes kunnen op de gewenste positie worden
+                     toegevoegd i.p.v. alleen achteraan
+                   - keuzes kunnen worden gescheiden met een lijnregel
+                   - novell gebruikersnaam of environment variabele LOGIN_NAME
+                     wordt getoond
+                   - rechter muis toets werkt als ESC toets
+
+    3.2 okt 1991   - geschikt voor gebruik op de HP 95 XL palmtop PC
+
+    3.1            - Opgeven programma en parameters bij een keuze op een
+                     betere manier, net zoals bij de DOS 5.0 shell
+
+    3.0            - Minder geheugen gebruik
+                   - DOS 5.0 LOADHIGH ondersteuning
+                   - Bij maximaal 9 keuze's, de keuze's een nummer geven.
+                   - Esc verlaat meteen een submenu zonder een vraag te stellen.
+                   - F3 sluit het menu en submenu's na een bevestiging af.
+
+    2.9            - Opstarten van alle programma's altijd via COMMAND zodat de
+                     programma's hun opstart directory en overlay's vinden.
+
+    2.8            - Popup schermen met schaduweffekten
+
+    2.7            - Muis besturing
+

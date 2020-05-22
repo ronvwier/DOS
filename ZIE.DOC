@@ -1,0 +1,173 @@
+
+
+
+
+
+
+
+
+                   ÚÄÄÄÄÄÄÄÄÄÄ¿  ÚÄ¿  ÚÄÄÄÄÄÄÄÄÄÄ¿
+                   ÀÄÄÄÄÄÄ¿  ÚÙ  ³ ³  ³ ÚÄÄÄÄÄÄÄÄÙ
+                         ÚÙ ÚÙ   ³ ³  ³ ³
+                        ÚÙ ÚÙ    ³ ³  ³ ³
+                       ÚÙ ÚÙ     ³ ³  ³ ÀÄÄÄÄÄÄÄÄ¿
+                      ÚÙ ÚÙ      ³ ³  ³ ÚÄÄÄÄÄÄÄÄÙ
+                     ÚÙ ÚÙ       ³ ³  ³ ³
+                    ÚÙ ÚÙ        ³ ³  ³ ³
+                   ÚÙ  ÀÄÄÄÄÄÄ¿  ³ ³  ³ ÀÄÄÄÄÄÄÄÄ¿
+                   ÀÄÄÄÄÄÄÄÄÄÄÙ  ÀÄÙ  ÀÄÄÄÄÄÄÄÄÄÄÙ
+
+
+
+
+
+
+
+
+
+
+
+                   ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                   ³                 Zie                   ³
+                   ³              versie 2.7               ³
+                   ³                                       ³
+                   ³      (c) 1991, R.A. van Wier RI       ³
+                   ³      Alle rechten voorbehouden.       ³
+                   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+
+
+
+
+
+
+
+
+
+
+                   Gebruik en distributie van deze software voor niet-
+                   commercie‰le doeleinden is kosteloos toegestaan.
+
+    Handleiding    ZIE - bekijken bestanden                                   1
+    ---------------------------------------------------------------------------
+    Samenvatting   ZIE is een programma om tekstuele en binaire bestanden te
+                   kunnen bekijken met gebruikmaking van bladertoetsen.
+
+                   Waar in DOS voor dit doel alleen het commando TYPE gebruikt
+                   kan worden om een bestand op het scherm te tonen zonder dat
+                   er mogelijkheden zijn om vooruit en achteruit te kunnen
+                   bladeren, is ZIE in staat om te kunnen bladeren en tevens
+                   om uit binaire bestanden alleen de leesbare teksten te
+                   laten zien.
+
+    Informatie     Voor adres- en bestelinformatie zie INFO-RVW.DOC
+
+    Aanroep        ZIE
+                   er wordt een lijst met bestanden getoond waaruit gekozen
+                   kan worden.
+
+                   ZIE naammasker
+                   er wordt een lijst met bestanden getoond waaruit gekozen
+                   kan worden en die voldoet aan het masker, waarin * en ?
+                   tekens zijn opgenomen.
+
+                   ZIE bestandsnaam
+                   het opgegeven bestand wordt getoond.
+
+                   commando | ZIE
+                   de uitvoer van het commando wordt getoond, bijvoorbeeld
+                   "DIR | ZIE" toont de inhoud van de huidige directory
+
+                   HEX
+                   Alle tekens worden getoond inclusief de codes van deze
+                   tekens in een zogenaamd hexadecimaal dump formaat.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Handleiding    ZIE - bekijken bestanden                                   2
+    ---------------------------------------------------------------------------
+    BESTAND menu:  Open bestand (O)
+                   een ander bestand inlezen.
+
+                   Afdrukken bestand (A)
+                   afdruk maken van bestand op de printer.
+
+                   Copie maken (C)
+                   het bestand copieeren in de getoonde opmaak naar een
+                   ander bestand.
+
+                   Zoeken tekst (Z)
+                   zoeken naar een stuk tekst vanaf de regel die
+                   bovenaan op het scherm staat.
+
+                   Einde (F3)
+                   Zie afsluiten.
+
+    FORMAAT menu:  Tekstueel (T)
+                   het bestand wordt getoond zonder enige vertaling van tekens
+
+                   Hexadecimaal (H)
+                   alle tekens worden getoond inclusief de codes van deze
+                   tekens in een zogenaamd hexadecimaal dump formaat.
+
+                   Leesbare tekens (L)
+                   alleen leesbare tekens worden getoond indien deze in een
+                   groep van minimaal 4 in het bestand staan. Hiermee is het
+                   mogelijk om teksten die verborgen zijn in COM/EXE en
+                   andere bestanden te tonen.
+
+    TONEN menu:    Liniaal (?)
+                   een liniaal wordt getoond boven in het scherm.
+
+                   Regelnummer (R)
+                   voor elke regel wordt het nummer van de regel getoond.
+
+                   Posities (P)
+                   de hexadecimale start positie van de regel in het bestand
+                   wordt getoond.
+
+                   Einde regel(e)
+                   het einde van de regel wordt aangegeven met een '.'
+
+
+
+
+
+
+    Handleiding    ZIE - bekijken bestanden                                   3
+    ---------------------------------------------------------------------------
+    Nieuws         Overzicht van nieuwe mogelijkheden per versie
+    -------------  ------------------------------------------------------------
+    2.7  jul 1995  - fout in herkenning einde bestand opgelost
+
+    2.6  aug 1992  - bestand wordt in achtergrond ingelezen
+                   - regelnummers en posities e.d. verschijnen ook op papier ?
+
+    2.5  jul 1992  - verwijdering van teveel fouten uit 2.4
+                   - openen bestand via O i.p.v. nieuw bestand via N
+                   - tonen liniaal
+                   - tonen regelnummers
+                   - tonen posities
+                   - tonen einde regel
+
+    2.4  jun 1992  - toegang tot in gebruik zijnde bestanden op netwerken
+
+    2.3  mei 1992  - verspreiding via BBS-en
+
+    1.0      1990  - eerste versie
+
+

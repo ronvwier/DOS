@@ -1,0 +1,41 @@
+    Bijlage        Schermaansturing
+    ---------------------------------------------------------------------------
+    Scherm-        De schermaansturing zoekt zelf uit of het programma op een
+    aansturing     kleuren of een monochroom scherm draait. Wat echter niet te
+                   zien is of een LCD scherm wordt gebruikt of een VGA scherm
+                   met grijstinten, hierdoor kan het voorkomen dat de kleuren
+                   niet optimaal ingesteld staan. Handmatig kan dan toch een
+                   juiste aansturing worden opgegeven.
+
+                   Ook de breedte en hoogte van het scherm worden automatisch
+                   bepaald maar bij PC's met een klein scherm van minder dan
+                   24 regels of 80 tekens per regel, kan dit handmatig worden
+                   opgegeven.
+
+   SCHERM          In de DOS omgeving (environment) kan een variabele worden
+   omgevings-      ingevuld met de naam "SCHERM" waarmee handmatig het
+   variabele       schermtype en de breedte/hoogte kunnen worden opgegeven.
+                   De syntax va het DOS commando om deze variabele op te
+                   geven is "SET SCHERM=t,rr,kk" waarbij t=schermtype,
+                   rr=rijen, kk=kollommen
+                   Het beste kan dit DOS commando worden opgenomen in de
+                   AUTOEXEC.BAT file van uw PC.
+
+   Schermtype      M=Monochroom
+                   L=LCD
+                   C=Color
+                   G=Grijstinten
+
+   Voorbeeld       Opgeven dat een LCD scherm wordt gebruikt:
+
+                      SET SCHERM=L
+
+                   Opgeven dat een klein type LCD scherm wordt gebruikt:
+
+                      SET SCHERM=L,16,80
+
+                   Opgeven dat de monochroom kleuren moeten worden gebruikt:
+
+                      SET SCHERM=M
+
+

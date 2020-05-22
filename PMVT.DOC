@@ -1,0 +1,161 @@
+
+                   ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                   ³        PM Videotex Terminal           ³
+                   ³          versie 0.2 (beta)            ³
+                   ³                                       ³
+                   ³      OS/2 Presentation Manager        ³
+                   ³                                       ³
+                   ³      (c) 1994, R.A. van Wier RI       ³
+                   ³      Alle rechten voorbehouden.       ³
+                   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+                   Waarschuwing: deze versie is en z.g.n. beta versie, alleen
+                   bedoeld voor het testen van PMVT, er wordt dus geen garantie
+                   gegeven m.b.t. de je werking van PMVT. 
+
+                   Gebruik en distributie van deze software is kosteloos
+                   toegestaan.
+
+    Handleiding    PMVT - Videotex Terminal voor PM (OS/2)                    1
+    ---------------------------------------------------------------------------
+    Samenvatting   PMVT is een programma om te communiceren met databanken
+                   die werken volgens het Videotex/Prestel protocol en bedoeld
+                   voor gebruik onder de OS/2 Presentation Manager.
+
+                   Databanken met een Videotex/Prestel protocol zijn o.a.
+                   alle Videotex nummers (06-7100,7200,7300 enz.) en Girotel.
+
+                   PMVT werkt alleen met Hayes commando besturing van modems. Het
+                   modem MOET het "CARRIER DETECT" signaal juist doorgeven, dus
+                   alleen als er verbinding is.  Dit wordt op uw modem ingesteld
+                   via een switch of via de 'AT&C1' modem setting. Ook de modem
+                   kabel en connectoren moeten dit signaal doorgeven. Zie AT
+                   voor het instellen van uw modem.
+
+                   PMVT werkt samen met alle door OS/2 ondersteunde schermen en
+                   communicatie poorten.
+
+    -------------
+    Informatie     Voor adres- en bestelinformatie zie INFO-RVW.DOC
+    -------------
+    Aanroep        PMVT compoort snelheid Toon/Pulse telefoonnr {opties}
+
+    in .CMD file   PMVT bouwt de verbinding op met het opgegeven telefoonnummer
+
+                   Bijv.: PMVT 2 2400 T 06-7100 
+
+    vanaf desktop  Copieer een PROGRAM template met bijvoorbeeld de volgende
+                   instellingen vanuit de TEMPLATE folder naar uw desktop:
+                   
+                   Settings
+                      Program
+                         Path and filename: c:\rvwtools\PMVT.EXE   
+                         Parameters.......: 2 2400 T 067100 
+
+
+    Handleiding    PMVT - Videotex Terminal voor PM (OS/2)                    2
+    ---------------------------------------------------------------------------
+    Opties         /Axx bestand xx gebruiken voor Automatisme in videotex,
+                        inhoud xx per regel:
+
+                        1.  wacht-tekst^zend-tekst
+                            na ontvangst wacht-tekst wordt zend-tekst verzonden
+                        2.  wacht-tekst^
+                            alleen wachten totdat wacht-tekst voorbij komt
+                        3.  ^verzend-tekst
+                            direkt verzend-tekst versturen
+                        4.  als bovenstaand maar met ^^ i.p.v. ^ , hierdoor
+                            wordt 1 seconde per extra ^ gewacht voor het
+                            versturen van de tekst
+                        5.  wacht-tekst^~
+                            na ontvangst van wacht-tekst verbinding verbreken
+
+    Voorbeeld      De PTT telegids oproepen via modem op de COM2: op 2400 baud.
+
+                   PMVT met als parameters: 2 2400 T 06-7400 /aTELEGIDS.VTA
+                   telegids.vta: Videotex^telegids#
+
+    Voorbeeld      Een verbinding opbouwen met Girotel via VideoTex NL op
+                   nummer 06-7100 en automatisch de codes verzenden.
+
+                   PMVT met als parameters: 2 2400 T 06-7100 /aGTL.VTA
+                   gtl.vta: naam^GTL#
+                            Girotelnummer^123456
+                            Codenummer^123456
+
+                   /GC  VT stopt niet als het "Carrier" signaal afwezig is
+
+                   /Lxx Logbestand xx aanmaken voor VTPLAY, zonder bestands-
+                        naam wordt VT.LOG gebruikt
+
+                   /Mxx Bestand xx inlezen voor toetsenbord macro's
+                        de vorm van dit DOS tekstbestand is per regel:
+
+                        toets=tekst
+
+                        waarbij toets een normale toets is of Fx, Shift-Fx,
+                        Ctrl-Fx of Alt-Fx. Fx kan zijn F1 t/m F12.
+                        Daarnaast kan ook Alt-l gebruikt worden (l=A t/m Z)
+                        Bijvoorbeeld: Alt-W=wachtwoord#
+
+                        Indien een bestand met de naam VT.MAC aanwezig is dan
+                        wordt dit als eerste ingelezen en daarna alle andere
+                        via /M opgegeven macro bestanden.
+
+                   /Pxx Print bestand xx aanmaken van 24 regels + 1 formfeed
+                        regel, zonder bestandsnaam wordt de printer gebruikt
+
+    Handleiding    PMVT - Videotex Terminal voor PM (OS/2)                    3
+    ---------------------------------------------------------------------------
+    Toetsenbord    De volgende toetsen hebben een betekenis binnen VT
+
+            Enter  Op een normaal scherm, verstuur het # teken als bevestiging
+
+       Ctrl+Enter  Ga naar begin volgende regel
+
+             Home  Ga terug naar het begin van het invulscherm
+
+              End  Sluit het invulscherm af
+
+    pyltje omhoog  Ga naar boven
+
+    pyltje omlaag  Ga naar beneden
+
+     pyltje links  Ga naar de voorgaande invoerpositie
+
+    pyltje rechts  Ga naar de volgende invoerpositie
+
+               F1  Vraag om help informatie
+
+           Alt+F4  afbreken PMVT
+
+               F5  Ververs het scherm door het nogmaals op te vragen
+
+       PgUp en F7  Terug bladeren
+
+       PgDn en F8  Vooruit bladeren
+
+           Insert  Spatie invoegen in invulscherm
+
+           Delete  Teken verwijderen in invulscherm
+
+       Alt+Insert  Blanko regel invoegen in invulscherm
+
+       Alt+Delete  Regel verwijderen in invulscherm
+
+     Shift+Insert  Verzend inhoud clipboard naar videotex dienst
+
+      Ctrl+Insert  Copieer videotex scherm naar clipboard
+
+           Ctrl+I  Voeg het videotex scherm achteraan toe aan het clipboard
+
+                   Aan andere toetsen kan een eigen betekenis worden gegeven
+                   via een macro file, zie de /M optie.
+
+    Handleiding    PMVT - Videotex Terminal voor PM (OS/2)                    4
+    ---------------------------------------------------------------------------
+    Nieuws         Overzicht van nieuwe mogelijkheden per versie
+
+    0.2  jul 1994  - Eerste verspreiding PMVT
+
+

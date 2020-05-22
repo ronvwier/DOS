@@ -1,0 +1,92 @@
+    Handleiding    VT - Videotex Terminal                                     1
+    ---------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+                   ÚÄÄ¿            ÚÄÄ¿  ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                   À¿ À¿          ÚÙ ÚÙ  ÀÄÄÄÄÄÄÄ¿ ÚÄÄÄÄÄÄÄÙ
+                    À¿ À¿        ÚÙ ÚÙ           ³ ³
+                     À¿ À¿      ÚÙ ÚÙ            ³ ³
+                      À¿ À¿    ÚÙ ÚÙ             ³ ³
+                       À¿ À¿  ÚÙ ÚÙ              ³ ³
+                        À¿ À¿ÚÙ ÚÙ               ³ ³
+                         À¿ ÀÙ ÚÙ                ³ ³
+                          À¿  ÚÙ                 ³ ³
+                           ÀÄÄÙ                  ÀÄÙ
+
+
+
+
+
+
+
+
+
+
+
+                   ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                   ³           Videotex Terminal           ³
+                   ³              versie 2.1               ³
+                   ³                                       ³
+                   ³   (c) 1991-1992, R.A. van Wier RI     ³
+                   ³      Alle rechten voorbehouden.       ³
+                   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+
+
+    Samenvatting   VT is een programma om te communiceren met databanken
+                   die werken volgens het Videotex/Prestel protocol en heeft
+                   tevens de mogelijkheid tot het laden van telesoftware.
+                   Databanken met een Videotex/Prestel protocol zijn o.a.
+                   alle Videotex nummers (06-7100,7200,7300 enz.) en Girotel.
+
+
+
+    Uitleg         VT - VideoTex terminal                                     2
+    ---------------------------------------------------------------------------
+
+    Interne struktuur
+    -----------------
+    VT
+       |___DATACOMM           Datacommunicatie uitvoeren
+       |      |___BIOSCOMM    Communicatie via BIOS
+       |      |___DOSCOMM     Communicatie via DOS
+       |      |___FOSSIL      Communicatie via FOSSIL
+       |      |___HWCOMM      Communicatie via hardware
+       |      |___WEKKER      Signaleren time-out
+       |___DIALOOG            Voeren dialogen met gebruiker
+       |      |___GELUID      Geven van geluid
+       |      |___KLEUR       Wijzigen kleurenpallette n.a.v. tonen popup window
+       |      |___MUIS        Besturing van de muis
+       |      |___SCHERM      Schermafhandeling
+       |      |___TOETS       Afhandelen toetsenbord invoer via BIOS
+       |___GELUID             Geven van geluid
+       |___PATROON            Patroonherkenning
+       |___SCHERM             Schermafhandeling
+       |      |___ISHP95XL    Kijken of we op een HP 95 LX (palmtop) draaien
+       |___TAAK               Draaien taken bij aanroep vanuit toetsafhandeling
+       |___TOETS              Afhandelen toetsenbord invoer via BIOS
+       |      |___TAAK        Draaien taken bij aanroep vanuit toetsafhandeling
+       |___VIDEOTEX           Videotex codes
+       |___VTDIS
+       |      |___SCHERM      Schermafhandeling
+       |      |___KLEUR       Wijzigen kleurenpallette n.a.v. tonen popup window
+       |      |___TIJD        Tijd tonen op scherm
+       |      |___VIDEOTEX    Videotex functies
+       |___VTESC              Afhandelen ESC code menu's
+       |      |___DIALOOG     Voeren dialogen met gebruiker
+       |      |___GELUID      Geven van geluid
+       |      |___VIDEOTEX    Videotex codes
+       |___VTLAAD             Laden software via videotex
+       |      |___DATACOMM    Verzorgen datacommunicatie
+       |      |___VTDISLD     Laden telefoftware
+       |      |___TOETS       Afhandelen toetsenbord invoer via BIOS
+       |___WEKKER             Time-out signaleren
+              |___TAAK        Draaien taken bij aanroep vanuit toetsafhandeling
+

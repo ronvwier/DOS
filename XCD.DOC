@@ -1,0 +1,16 @@
+XCD        eXtended Change Directory
+===
+
+Taak       Het interaktief wijzigen van directory voor mensen zoals ik die
+           niet steeds de directory namen uit hun hoofd weten.
+           Daarnaast kunnen tevens directories worden aangemaakt, verwijderd
+           of van naam worden gewijzigd.
+
+Aanroep    XCD
+
+(c) 1991   Amsterdam, R.A. van Wier RI
+           Gebruik en distributie van deze software voor niet-
+           commercieele doeleinden is kosteloos toegestaan.
+
+           Voor adres- en bestelinformatie zie INFO-RVW.DOC
+

@@ -1,0 +1,45 @@
+PALMTRIS
+========
+
+Doel       Bedoeling van het spel is de blokjes die over de baan naar
+           beneden komen vallen zo goed mogelijk aan te laten sluiten.
+           Als een horizontale laag helemaal vol is verdwijnt deze.
+           Het spel is uit als de baan tot boven aan toe gevuld is.
+
+Toetsen    Om de blokjes zo goed mogelijk aan te laten sluiten kunnen de
+           volgende toetsen gebruikt worden:
+
+           <left>   = het blokje schuift een positie naar links.
+           <return> = het blokje roteert een kwartslag.
+           <right>  = het blokje schuift een positie naar rechts.
+           <down>   = het blokje valt gelijk helemaal naar beneden.
+
+Muis       Muis besturing :
+
+           <left>   = het blokje schuift een positie naar links.
+           <right>  = het blokje schuift een positie naar rechts.
+           <click-R>= het blokje roteert een kwartslag.
+           <click-L>= het blokje valt gelijk helemaal naar beneden.
+
+Punten     De puntentelling is onnavolgbaar maar een paar aanduidingen:
+
+           o makkelijke blokjes leveren minder op als moeilijke blokjes.
+           o van hoe hoger je een blokje laat vallen, des te meer punten.
+           o hoe hoger de moeilijkheidsgraad, des te meer punten.
+           o met <F9> krijg je blokjes van onvoorspelbare vorm en meer punten.
+
+(c) 1988   R.A. van Wier RI
+           Gebruik en distributie van deze software voor niet-
+           commercieele doeleinden is kosteloos toegestaan.
+
+           Dit programma is een "kloon" van het orginele tetris programma
+           van A. Pajitnov & V. Gerasimov.
+
+Versies
+  1.1 dec  1991  Aangepast zodat PALMTRIS draait op een HP95LX (palmtop)
+  1.0 jan  1990  Hernoemde versie van het alom verspreide TETRIS,
+                 dit i.v.m. een claim op de naam door een derde.
+           1988  Verspreiding onder de naam TETRIS (t/m versie 3.2)
+
+           Voor adres- en bestelinformatie zie INFO-RVW.DOC
+

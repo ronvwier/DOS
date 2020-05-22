@@ -1,0 +1,52 @@
+
+
+
+
+    R.A. van Wier
+    C. Parkerstraat 14
+    1066 GW  Amsterdam
+
+
+
+    L.S.,
+
+    Ingesloten bij deze brief treft u een diskette aan met de nieuwe versie van
+
+
+
+                                  VT
+
+
+
+    Omdat uw originele bestelling minder dan een jaar terug was ontvangt u deze
+    nieuwe versie geheel kosteloos.
+
+    Voor het installeren van de software en documentatie op de harde schijf
+    van uw computer dient u onderstaande procedure te volgen:
+
+    -  Indien u vanaf een diskette poort op uw harde schijf wilt plaatsen:
+
+          toets op de dos commandline in:
+
+             A:                  (of B: gevolgd door enter/return)
+             INSTALL             (gevolgd door enter/return)
+
+          de software wordt hierdoor gecopieerd naar C:\RVWTOOLS. Indien
+          het gewenst is dat de software op een andere lokatie wordt gezet
+          toets dan na INSTALL de naam van de lokatie in, bijvoorbeeld:
+
+             INSTALL D:\PAKKET
+
+    -  Indien u de software vanaf diskette wilt gebruiken:
+
+          maak een copie van de diskette met het dos commando DISKCOPY,
+          zie voor meer informatie uw dos handleiding.
+
+    Aan het einde van de installatie procedure kunt u met het commando
+    COPY *.DOC LPT1  de documentatie afdrukken op uw printer.
+
+    Heeft u een idee voor een verbetering van mijn software, laat dit dan weten.
+    Het bouwen van goede software is tenslotte niet mogelijk zonder de inbreng
+    van goede gebruikers.
+
+

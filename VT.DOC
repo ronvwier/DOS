@@ -1,0 +1,460 @@
+
+
+
+
+
+
+
+
+
+                   ÚÄÄ¿            ÚÄÄ¿  ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                   À¿ À¿          ÚÙ ÚÙ  ÀÄÄÄÄÄÄÄ¿ ÚÄÄÄÄÄÄÄÙ
+                    À¿ À¿        ÚÙ ÚÙ           ³ ³
+                     À¿ À¿      ÚÙ ÚÙ            ³ ³
+                      À¿ À¿    ÚÙ ÚÙ             ³ ³
+                       À¿ À¿  ÚÙ ÚÙ              ³ ³
+                        À¿ À¿ÚÙ ÚÙ               ³ ³
+                         À¿ ÀÙ ÚÙ                ³ ³
+                          À¿  ÚÙ                 ³ ³
+                           ÀÄÄÙ                  ÀÄÙ
+
+
+
+
+
+
+
+
+
+
+
+                   ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                   ³           Videotex Terminal           ³
+                   ³              versie 2.3               ³
+                   ³                                       ³
+                   ³              DOS en OS/2              ³
+                   ³                                       ³
+                   ³     (c) 1991-1996, R.A. van Wier      ³
+                   ³      Alle rechten voorbehouden.       ³
+                   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+
+
+
+
+
+
+
+                   Gebruik en distributie van deze software voor niet-
+                   commercie‰le doeleinden is kosteloos toegestaan.
+
+    Handleiding    VT - Videotex Terminal                                     1
+    ---------------------------------------------------------------------------
+    Samenvatting   VT is een programma om te communiceren met databanken
+                   die werken volgens het Videotex/Prestel protocol en heeft
+                   tevens de mogelijkheid tot het laden van telesoftware.
+                   Databanken met een Videotex/Prestel protocol zijn o.a.
+                   alle Videotex nummers (06-7100,7200,7300 enz.) en Girotel.
+
+                   VT kan worden aangeroepen vanuit elk menu systeem of
+                   batch bestand en belt dan het opgegeven nummer of het
+                   kan worden gebruikt als extern protocol voor een ander
+                   communicatie pakket, nadat het andere communicatie pakket
+                   een verbinding heeft opgebouwd wordt VT aangeroepen om
+                   de Videotex schermafhandeling te verzorgen.
+
+                   VT werkt alleen met Hayes commando besturing van modems. Het
+                   modem MOET het "CARRIER DETECT" signaal juist doorgeven, dus
+                   alleen als er verbinding is.  Dit wordt op uw modem ingesteld
+                   via een switch of via de 'AT&C1' modem setting. Ook de modem
+                   kabel en connectoren moeten dit signaal doorgeven. Zie AT
+                   voor het instellen van uw modem.
+
+                   VT werkt samen met alle schermen en altijd in de tekst mode,
+                   hierdoor is de weergave van grafische tekens helaas beperkt.
+    -------------
+    Informatie     Voor adres- en bestelinformatie zie INFO-RVW.DOC
+    -------------
+    Aanroep uit    VT compoort snelheid Toon/Pulse telefoonnr {opties}
+    menu of .BAT
+    of .CMD        VT bouwt de verbinding op met het opgegeven telefoonnummer
+
+                   Bijv.: VT 1 2400 T 06-7100 /s2
+                      of: VT ? 2400 T 06-7100 /s2     (auto com poort selektie)
+
+                   Returncodes: 0=verbinding gelukt, 1=verbinding mislukt
+    -------------
+    Aanroep uit    VT compoort {opties}
+    een pakket
+                   Verbinding moet door een communicatiepakket zijn opgebouwd
+
+                   Bijv.: VT 2 /s2 /v
+    -------------
+    Snelheden      VT is getest op 1200 (V22), 2400 (V22bis) en 9600 (V32) bps.
+    -------------
+    FOSSIL  (DOS)  VT maakt gebruik van een FOSSIL driver indien deze aktief is
+                   getest is VT met BNU en X00.
+                   n.b. de compoorten worden geteld vanaf 1 (COM1:).
+
+
+
+    Handleiding    VT - Videotex Terminal                                     2
+    ---------------------------------------------------------------------------
+    Opties         /Axx bestand xx gebruiken voor Automatisme in videotex,
+                        inhoud xx per regel:
+
+                        1.  wacht-tekst^zend-tekst
+                            na ontvangst wacht-tekst wordt zend-tekst verzonden
+                        2.  wacht-tekst^
+                            alleen wachten totdat wacht-tekst voorbij komt
+                        3.  ^verzend-tekst
+                            direkt verzend-tekst versturen
+                        4.  als bovenstaand maar met ^^ i.p.v. ^ , hierdoor
+                            wordt 1 seconde per extra ^ gewacht voor het
+                            versturen van de tekst
+                        5.  wacht-tekst^~
+                            na ontvangst van wacht-tekst verbinding verbreken
+                        6.  labelnaam:
+                        7.  wacht-tekst^~labelnaam 
+                            na ontvangst van de wachttekst wordt naar het 
+                            betreffende label gesprongen 
+                        8.  wacht1^zend1|wacht2^zend2
+                            indien wacht1 binnenkomt wordt zend1 verzonden, komt
+                            wacht2 eerst binnen dan wordt zend2 verzonden
+
+    Speciale      Elk teken met een waarde > 127 wordt vertaald naar de waarde
+    tekens        minus 128, hierdoor kunnen er speciale tekens worden verstuurd.
+                  Door gebruik van de Alt toets en tegelijkertijd het intikken
+                  van de cijfers op het numerieke eiland kunen deze in worden
+                  gebracht in de meeste editors.
+                  
+                  bijv. Alt+135=Bel, 136=Cursor links, 137=Cursor rechts, 
+                  138=Cursor naar beneden, 139=Cursor omhoog, 140=Home,
+                  141=Return
+                   
+    Voorbeeld      De PTT telegids oproepen via een batch file voor een
+                   modem op de COM2: poort op 2400 baud.
+
+                   telegids.bat: VT 2 2400 T 06-7400 /aTELEGIDS.VTA
+                   telegids.vta: Videotex^telegids#
+
+    Voorbeeld      Een verbinding opbouwen met de Postbank via VideoTex NL op
+                   nummer 06-7100 en de geldkoersen ophalen.
+
+                   GELDKOERS.BAT: VT ? 2400 T 06-7100 /aGELDKOERS.VTA
+                   GELDKOERS.VTA: dienst^girotelbus#
+                                  Postbankdiensten^2
+                                  Koersinfo^#
+                                  koersen:
+                                  Vervolg^#|Terug^~
+                                  ^~koersen
+
+
+    Handleiding    VT - Videotex Terminal                                     3
+    ---------------------------------------------------------------------------
+    opties   (DOS) /CB  Communicatie via de BIOS/INT14 interface
+                        hierdoor maakt VT alleen gebruik van standaard BIOS
+                        aanroepen, dit is alleen nuttig in speciale omgevingen
+                        zoals een LAN of een multi-tasking schil.
+
+             (DOS) /CF  Communicatie via de FOSSIL interface
+                        hierdoor maakt VT gebruik van een FOSSIL interface.
+
+             (DOS) /CH  Communicatie via de hardware interface
+                        hierdoor spreekt VT rechtstreeks de hardware poorten
+                        aan, deze interface wordt standaard gebruikt indien
+                        er geen FOSSIL is geladen.
+
+                   /Dzz Directory zz gebruiken voor opslag telesoftware
+
+                   /GC  VT stopt niet als het "Carrier" signaal afwezig is
+
+                   /Ix  afwijkende Interrupt x gebruiken voor COM poort
+
+                   /Lxx Logbestand xx aanmaken voor VTPLAY, zonder bestands-
+                        naam wordt VT.LOG gebruikt
+
+                   /Mxx Bestand xx inlezen voor toetsenbord macro's
+                        de vorm van dit DOS tekstbestand is per regel:
+
+                        toets=tekst
+
+                        waarbij toets een normale toets is of Fx, Shift-Fx,
+                        Ctrl-Fx of Alt-Fx. Fx kan zijn F1 t/m F12.
+                        Daarnaast kan ook Alt-l gebruikt worden (l=A t/m Z)
+                        Bijvoorbeeld: Alt-W=wachtwoord#
+
+                        Indien een bestand met de naam VT.MAC aanwezig is dan
+                        wordt dit als eerste ingelezen en daarna alle andere
+                        via /M opgegeven macro bestanden.
+
+                   /Pxx Print bestand xx aanmaken van 24 regels + 1 formfeed
+                        regel, zonder bestandsnaam wordt de printer gebruikt
+
+                   /S0  Scherm met 80 pos., waarvan 40 in gebruik
+                   /S1  Scherm met 40 pos., met brede letters en figuren
+                        deze instelling werkt alleen op CGA/EGA/VGA schermen
+                   /S2  Scherm met 80 pos., met alleen brede figuren
+
+                   /V   Ververs scherm nadat VT is opgestart, is soms nodig
+                        bij een trage start vanuit een communicatie pakket
+
+    Handleiding    VT - Videotex Terminal                                     4
+    ---------------------------------------------------------------------------
+    Toetsenbord    De volgende toetsen hebben een betekenis binnen VT
+
+            Enter  Op een normaal scherm, verstuur het # teken als bevestiging
+                   Op een telesoftware scherm, start met ophalen software
+
+       Ctrl+Enter  Ga naar begin volgende regel
+
+              Esc  De escape toets wordt gebruikt voor het oproepen van een
+                   menu om speciale codes te versturen
+
+             Home  Ga terug naar het begin van het invulscherm
+
+              End  Sluit het invulscherm af
+
+    pyltje omhoog  Ga naar boven
+
+    pyltje omlaag  Ga naar beneden
+
+     pyltje links  Ga naar de voorgaande invoerpositie
+
+    pyltje rechts  Ga naar de volgende invoerpositie
+
+               F1  Vraag om help informatie
+
+     Alt+F4 en F3  Oproepen menu scherm met opties voor het afsluiten van
+                   schermen, (sub)diensten en de verbinding
+
+               F5  Ververs het scherm door het nogmaals op te vragen
+
+       PgUp en F7  Terug bladeren
+
+       PgDn en F8  Vooruit bladeren
+
+         Shift+F9  Uitstap naar DOS zonder dat de verbinding wordt verbroken
+
+           Insert  Spatie invoegen in invulscherm
+
+           Delete  Teken verwijderen in invulscherm
+
+    *) Alt+Insert  Blanko regel invoegen in invulscherm
+
+    *) Alt+Delete  Regel verwijderen in invulscherm
+
+                   Aan andere toetsen kan een eigen betekenis worden gegeven
+                   via een macro file, zie de /M optie.
+
+   (*) deze toetsen werken niet op oudere PC's
+
+    Handleiding    VT - Videotex Terminal                                     5
+    ---------------------------------------------------------------------------
+    COM poorten    Indien in de BIOS data-area geen adresinformatie bekend is
+    (DOS)          van een COM poort worden onderstaande adressen gebruikt:
+
+                   Poort  Adres  Interrupt | Gebruik de /I optie voor een
+                   -----  -----  --------- | andere interrupt instelling.
+                   COM1:    3F8          4 |
+                   COM2:    2F8          3 |
+                   COM3:    3E8          4 |
+                   COM4:    2E8          3 |
+
+                   Indien een FOSSIL zoals BNU of X00 aktief is dan wordt deze
+                   gebruikt i.p.v. de directe aansturing van de COM poorten.
+                   Ook bij een FOSSIL loopt de nummering van de poorten vanaf
+                   1 en dus niet vanaf 0.
+                   D.w.z. FOSSIL port 0 = COM1 = VT poort 1.
+
+                   Met de opties /CB, /CF en CH kan worden afgedwongen dat VT
+                   via het BIOS, FOSSIL of de hardware met het modem praat.
+                   Normaal is via de hardware tenzij er een FOSSIL aktief is.
+
+                   Bij opgave van '?' ipv. een poortnummer wordt automatisch
+                   gezocht naar een modem, niet bij gebruik als extern protocol.
+
+
+    -------------
+    AT             Met AT kunt u commando's aan uw modem geven, 'AT ? Z &C1 &W'
+                   om de Carrier Detect instelling permanent te wijzigen.
+                   Toets alleen 'AT' in voor een gebruiksaanwijzing.
+    -------------
+    MODEMTST       Met MODEMTST kunt u zien op welk COM poort een modem
+                   is aangesloten.
+    -------------
+    VTBEL          Met de opdracht: VTBEL nummer
+                            bijv. : VTBEL 06-7100
+                   probeert VT een verbinding te leggen met het opgegeven
+                   telefoonnummer. VTBEL.BAT/CMD kan worden aangepast.
+    -------------
+    VTDIENST       Met de opdracht: VTDIENST nummer dienst
+                            bijv. : VTDIENST 06-7100 PRIMAFOON
+                            bijv. : VTDIENST 06-7400 TELEGIDS
+                   probeert VT een verbinding te leggen met het opgegeven
+                   videotext dienst op het opgegeven nummer, VTDIENST maakt
+                   gebruik van VTBEL voor het bellen.
+    -------------
+    VTPLAY         Met VTPLAY kan een /L logbestand worden afgespeeld op
+                   het scherm, de aanroep is: VTPLAY logfile {opties}
+                   Mogelijke opties: /S0 /S1 /S2
+
+    Handleiding    VT - Videotex Terminal                                     6
+    ---------------------------------------------------------------------------
+    VT als extern  VT kan ook worden gebruikt als extern protocol voor een
+    protocol       ander communicatie pakket, nadat het communicatie pakket
+                   een verbinding heeft opgebouwd wordt VT aangeroepen om
+                   de Videotex schermafhandeling te verzorgen.
+
+                   Aanroep: VT compoort {opties}
+
+                   ONDERSTAANDE VOORBEELDEN GAAN UIT VAN EEN MODEM OP COM2!
+
+    (DOS) Procomm  Plaats in de telefoonlijst achter het nummer als CMD
+                   file bijv. de naam VT.
+                   Maak VT.CMD aan met als inhoud:
+
+                      DOS "VT 2 /S2"
+
+                   ONDERSTAANDE VOORBEELDEN GAAN UIT VAN EEN MODEM OP COM2!
+
+    (DOS)   Telix  Plaats in de telefoonlijst achter het nummer als SCRIPT
+                   file bijv. de naam VT.
+                   Maak VT.SLT aan met als inhoud:
+
+                      main()
+                      {
+                         run("vt","2 /s2 /v");
+                      }
+
+                   Voer het commando "CS VT.SLT" uit.
+
+    (DOS)   Commo  Plaats in de telefoonlijst als macro {vtx} en als parms
+                   {,7e1}.
+
+                   Roep de macro-editor op via Alt-M en maak een regel aan
+                   met als inhoud:
+
+                      {vtx} {exec vt 2 /s2 /v} {}
+
+    (DOS)Rexxterm  Plaats in de telefoonlijst achter het nummer als PROC
+                   file bijv. de naam VT.
+
+                   Maak VT.RXT aan met als inhoud:
+
+                      /* VideoTex protocol programma starten */
+                      'dosn vt 2 /S2 /v'
+
+
+
+
+
+    Handleiding    VT - Videotex Terminal                                     7
+    ---------------------------------------------------------------------------
+
+    (DOS)Telemate  Plaats in de telefoonlijst achter het nummer als SCRIPT
+                   file bijv. de naam VT.
+
+                   Maak met de editor het bestand VT.SCR aan met als inhoud:
+
+                      dos "vt 2 /s2 /v"
+
+                   Voer het commando "TMS VT" uit.
+
+    (DOS)   Boyan  Plaats in de telefoonlijst achter het nummer als SCRIPT
+                   file bijv. de naam VT.
+
+                   Maak met de editor het bestand VT.BSC aan met als inhoud:
+
+                      \DC-[VT 2 /s2 /v]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Handleiding    VT - Videotex Terminal                                     8
+    ---------------------------------------------------------------------------
+    Nieuws         Overzicht van nieuwe mogelijkheden per versie
+
+    2.3  jun 1996  - kleiner
+                   - uitbreiding macro taal met sprongopdrachten en keuzes
+                   - verbeterde werking met snelle modems
+
+    2.2  jan 1995  - betere werking met snelle modems 
+                   - ophangen via ATH commando 
+
+    2.1g mrt 1994  - Controle verbinding d.m.v. CARRIER signaal uitzetbaar
+                   - OS/2 tekst mode versie van VT
+                   - speciale tekens mogelijk in automaat bestanden
+
+    2.1  nov 1992  - FOSSIL support (BNU/X00)
+                   - met AT kan een modeminstelling worden gewijzigd
+                   - in een OS/2 2.0 DOS box draait VT nu beter
+                   - ondersteuning 80 kolloms videotex
+                   - toetsenbord macro's mogelijk via /M optie
+                   - BIOS support
+
+    2.0  apr 1992  - kleuren op EGA/VGA schermen beter m.n. geel en wit
+                   - VTPLAY sneller en beter
+                   - adressen COM poorten uit BIOS worden gebruikt
+                   - MODEMTST vindt meer interne modems
+                   - compoort=? zoekt naar een modem
+                   - VTDIENST voor automatisch starten van videotex dienst
+
+    1.9  jan 1992  - ESC en CTRL-codes kunnen worden verstuurd, Esc roept
+                     nu een keuzemenu op voor diverse codes waaronder
+                     annuleren invoerscherm.
+                   - F3 en Alt+F4 geven nu een keuzemenu voor een aantal
+                     afsluitmogelijkheden, het afsluiten van de verbinding
+                     is hier ook in opgenomen (F9 is vervallen).
+                   - Uitstap naar de DOS commandoregel is nu mogelijk met
+                     Shift+F9 zonder dat de verbinding wegvalt.
+
+    1.8  dec 1991  - parity wordt altijd op E,7,1 gezet
+                   - /A verzend tekst ~ verbreekt de verbinding
+                   - VTPLAY wordt nu gestuurd met PgUp en PgDn toetsen
+
+    1.7            - /P optie voor aanmaken print file
+                   - /A sturen tekst zonder wachten
+                   - /A wachttijd voor versturen tekst
+                   - returncode geeft aan of verbinding is gelukt
+
+    1.6            - interrupt voor COM poort instelbaar
+
+    1.5            - /V optie om het scherm na het opstarten gelijk te laten
+                     verversen door de VideoTex computer
+                   - ophangen via ATH commando als ophangen via DTR signaal
+                     mislukt
+                   - bij VGA scherm in monochrome stand wordt deze op kleur
+                     gezet bij de optie /S1 (40 tekens per regel)
+
+    1.4            - telesoftware
+                   - verspreiding VT via BBS
+

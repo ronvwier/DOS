@@ -1,0 +1,85 @@
+
+� Area: 512 - Vraagbaak over C  NL 컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴�
+  Msg#: 9747                                         Date: 12-03-92  17:44
+  From: Rene van.Ee                                  Read: Yes    Replied: No 
+    To: Frank Vandervelpen                           Mark:                     
+  Subj: Fonts
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+Hallo Frank!
+
+Wednesday December 02 1992, Rene van.Ee writes to Frank Vandervelpen:
+
+ FV>> Kan iemand mij het formaat geven van de fonts die in windows sdk 2.03
+ FV>> gebruikt werd.
+
+ RvE> Sorry, daar kan ik je niet aan helpen.
+
+ FV>> P.S. Kent er iemand het formaat van een PCX, GIF, TIFF, BMP, ....
+ FV>> Alle tips zijn ook hier welkom.
+
+ RvE> GIF zit vrij ingewikkeld in elkaar (behalve het formaat zelf zit je met
+ RvE> de compressie, die een vorm van het LZW-algoritme is). TIFF is voor zover
+ RvE> ik weet ook vrij ingewikkeld. BMP weet ik niet. PCX is simpel! Hieronder
+ RvE> volgen een paar details daarvan:
+
+Sorry, d'r ging wat mis bij bovenstaand reply. Bij deze dus de details van het
+PCX-formaat:
+
+Een PCX-file bestaat uit een header van 128 bytes, gevolgd door de image data.
+In het geval van een 256-kleuren plaatje wordt na de image data nog een byte
+meegegeven (ik geloof met waarde 0Eh), waarna 768 bytes voor het palet volgen
+(256 maal 3 bytes, 1 voor R, 1 voor G en 1 voor B). Plaatjes met 16 of minder
+kleuren slaan de palet-informatie op in de header.
+
+Die header ziet er als volgt uit:
+
+Offset | Lengte (bytes) | Beschrijving
+-!!!!!-|-!!!!!!!!!!!!!!-|-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-
+  00h  |       1        | Fabrikant; 10 (decimaal) = ZSoft PCX
+  01h  |       1        | Versienummer; 0 = 2.5; 2 = 2.8; 5 = 3.0
+  02h  |       1        | Compressiemethode; 1 = PCX
+  03h  |       1        | Aantal bits/pixel; 2 = 4 kleuren; 4 = 16 kl., 8 = 256
+  04h  |       2        | X-coordinaat linker bovenhoek
+  06h  |       2        | Y-coordinaat linker bovenhoek
+  08h  |       2        | X-coordinaat rechter onderhoek
+  0Ah  |       2        | Y-coordinaat rechter onderhoek
+  0Ch  |       2        | Horizontale resolutie
+  0Eh  |       2        | Verticale resolutie
+  10h  |       48       | Palet; 16 maal RGB-waarden
+  40h  |       1        | Reserved
+  41h  |       1        | Aantal bitplanes (16 kleuren EGA/VGA: 4; CGA/Herc:1)
+  42h  |       2        | Aantal bytes per regel PER BITPLANE
+  44h  |       2        | Color/grayscale: 1=kleur/zwart-wit; 2=grijswaarden
+  46h  |       58       | Reserved
+
+Op offset 48h ben ik in versienr. 5 (dus versie 3.0) files wel eens de
+horizontale resolutie tegengekomen, maar ik betwijfel of het 'officieel' is dat
+die daar nog een keer wordt genoemd.
+
+Na de 128 bytes van de header volgt de image data. Deze image data is PER REGEL
+(dus niet doorlopend over het beeld) gecomprimeerd volgens een simpel RLE
+(= Run Length Encoding) algoritme (dit is het algoritme, in C, dat je moet
+gebruiken om de PCX image data te lezen):
+
+for (regel = y_linksboven; regel <= y_rechtsonder; regel++)
+   for (x = x_linksboven; x <= x_rechtsonder;) {
+      byte = getc (PCX_file);
+      counter = 1;
+      if ((byte & 0xC0) == 0xC0) {
+         counter = byte & 0x3F;
+         byte    = getc (PCX_file);
+      }
+      x += counter;
+      for (; counter > 0; counter--)
+         StoreData (byte);
+   }
+
+Ik hoop dat je wat hebt aan bovenstaande informatie. Je kunt nu in elk geval
+PCX-support in je programma's inbouwen ;-).
+
+Grtx,
+   Rene.
+
+-!- GoldED 2.40
+ ! Origin: Voor een :-( gebruik je meer spieren dan voor een :-) (2:512/56.8)
+

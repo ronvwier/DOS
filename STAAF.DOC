@@ -1,0 +1,33 @@
+STAAF
+=====
+
+Bedoeling van het spel is de staafjes die over de baan naar beneden komen
+vallen zo goed mogelijk aan te laten sluiten in rijen van 3 dezelfde blokjes.
+Staan er 3 dezelfde blokjes op een rij dan verdwijnen deze en schuift alles
+op naar beneden.
+
+Het spel is uit als de baan tot boven aan toe gevuld is. Om de
+staafjes zo goed mogelijk aan te laten sluiten kunnen de volgende toetsen
+gebruikt worden:
+
+           <left>   = het staafje schuift een positie naar links.
+           <right>  = het staafje schuift een positie naar rechts.
+           <down>   = het staafje valt gelijk helemaal naar beneden.
+
+Muis besturing :
+
+           <left>   = het staafje schuift een positie naar links.
+           <right>  = het staafje schuift een positie naar rechts.
+           <click-L>= het staafje valt gelijk helemaal naar beneden.
+
+De puntentelling is onnavolgbaar maar een paar aanduidingen:
+
+           o hoe hoger op de baan je een staafje laat vallen, des te meer punten.
+           o hoe hoger het nivo, des te meer punten.
+
+(c) 1991   R.A. van Wier RI
+           Gebruik en distributie van deze software voor niet-
+           commercieele doeleinden is kosteloos toegestaan.
+
+           Voor adres- en bestelinformatie zie INFO-RVW.DOC
+

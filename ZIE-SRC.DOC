@@ -1,0 +1,131 @@
+    Uitleg         ZIE - bekijken bestanden                                   1
+    ---------------------------------------------------------------------------
+
+                   ÚÄÄÄÄÄÄÄÄÄÄ¿  ÚÄ¿  ÚÄÄÄÄÄÄÄÄÄÄ¿
+                   ÀÄÄÄÄÄÄ¿  ÚÙ  ³ ³  ³ ÚÄÄÄÄÄÄÄÄÙ
+                         ÚÙ ÚÙ   ³ ³  ³ ³
+                        ÚÙ ÚÙ    ³ ³  ³ ³
+                       ÚÙ ÚÙ     ³ ³  ³ ÀÄÄÄÄÄÄÄÄ¿
+                      ÚÙ ÚÙ      ³ ³  ³ ÚÄÄÄÄÄÄÄÄÙ
+                     ÚÙ ÚÙ       ³ ³  ³ ³
+                    ÚÙ ÚÙ        ³ ³  ³ ³
+                   ÚÙ  ÀÄÄÄÄÄÄ¿  ³ ³  ³ ÀÄÄÄÄÄÄÄÄ¿
+                   ÀÄÄÄÄÄÄÄÄÄÄÙ  ÀÄÙ  ÀÄÄÄÄÄÄÄÄÄÄÙ
+
+
+                   ZIE is een programma om tekstuele en binaire bestanden te
+                   kunnen bekijken met gebruikmaking van bladertoetsen.
+
+                   Waar in DOS voor dit doel alleen het commando TYPE gebruikt
+                   kan worden om een bestand op het scherm te tonen zonder dat
+                   er mogelijkheden zijn om vooruit en achteruit te kunnen
+                   bladeren, is ZIE in staat om te kunnen bladeren en tevens
+                   om uit binaire bestanden alleen de leesbare teksten te
+                   laten zien.
+
+    Uitleg         ZIE - bekijken bestanden                                   2
+    ---------------------------------------------------------------------------
+
+    Interne struktuur
+    -----------------
+
+    ZIE                     : Bestand bekijken
+       |
+       |___DIALOOG          : Voeren dialogen met gebruiker
+       |      |___GELUID    : Geven van geluid
+       |      |___KLEUR     : Wijzigen kleurenpallette n.a.v. tonen popup window
+       |      |      |___...
+       |      |___MUIS      : Besturing van de muis
+       |      |___SCHERM    : Schermafhandeling
+       |      |      |___...
+       |      |___TOETS     : Afhandelen toetsenbord invoer via BIOS
+       |             |___...
+       |
+       |___DIROPEN          : Interaktief selecteren bestand
+       |      |___DIALOOG   : Voeren dialogen met gebruiker
+       |      |      |___...  (zie verder)
+       |      |___DOSDIR    : DOS directory operaties
+       |      |      |___...
+       |      |___DOSDRIVE  Kijken of de drive aanwezig is
+       |      |___KLEUR     : Wijzigen kleurenpallette n.a.v. tonen popup window
+       |      |      |___...
+       |      |___SCHERM    : Schermafhandeling
+       |      |      |___...
+       |      |___TEKST     : Operaties op teksten (strings)
+       |
+       |___DOSDIR           : DOS directory operaties
+       |      |___DOSDRIVE  Kijken of de drive aanwezig is
+       |
+       |___DOSERROR         : DOS kritieke foutafhandeling
+       |
+       |___GELUID           : Geven van geluid
+       |
+       |___KLEUR            : Wijzigen kleurenpallette n.a.v. tonen popup window
+       |      |___SCHERM    : Schermafhandeling
+       |             |___...
+       |
+       |___SCHERM           : Schermafhandeling
+       |      |___ISHP95XL  : Kijken of we op een HP 95 LX (palmtop) draaien
+       |
+       |___TEKST            : Operaties op teksten (strings)
+       |
+       |___TIJD             : Huidige tijd tonen op opgegeven schermpositie
+       |      |___SCHERM    : Schermafhandeling
+       |      |      |___...
+       |      |___TAAK      : Draaien taken bij aanroep vanuit toetsafhandeling
+       |
+       |___TOETS            : Afhandelen toetsenbord invoer via BIOS
+       |      |___TAAK      : Draaien taken bij aanroep vanuit toetsafhandeling
+       |
+       |___ZIELEES          : Lezen van bestand in tekst/leesbaar/hex formaat
+              |___BESTAND   : Lezen van bestand ook in achtergrond
+                     |___TAAK
+
+    Uitleg         ZIE - bekijken bestanden                                   3
+    ---------------------------------------------------------------------------
+
+    Overzicht bestanden op floppy:
+
+    Naam     Ext     Omschrijving
+    -------  ----    --------------------------------------
+    BESTAND  C       Source  gebufferd lezen bestand
+    BESTAND  H
+    CC       BAT     Compilatie procedure
+    CLINK    BAT     Link procedure
+    CUA      H       Include SAA/CUA definities
+    DIALOOG  C       Source dialoogsturing
+    DIALOOG  H
+    DIROPEN  C       Source open file dialoog
+    DIROPEN  H
+    DOSDIR   C       Source directory operaties
+    DOSDIR   H
+    DOSDRIVE C       Source drive operaties
+    DOSDRIVE H
+    DOSERROR C       Source DOS critical error handler
+    DOSERROR H
+    GELUID   C       Source geluid routine
+    GELUID   H
+    ISHP95XL C       Source herkenning HP95XL palmtop
+    ISHP95XL H
+    KLEUR    C       Source kleureninstelling
+    KLEUR    H
+    MUIS     C       Source muisbesturing
+    MUIS     H
+    SCHERM   C       Source low-level schermaansturing
+    SCHERM   DOC
+    SCHERM   H
+    TAAK     C       Source idle-taken besturing
+    TAAK     H
+    TEKST    C       Source tekstoperaties
+    TEKST    H
+    TIJD     C       Source constant tijd tonen
+    TIJD     H
+    TOETS    C       Source low-level toetsenbord lezen
+    TOETS    H
+    ZIE      C       Source programma ZIE
+    ZIE      DOC     Documentatie ZIE
+    ZIE      EXE     Exec. Bekijken bestanden
+    ZIE      NMK     NMAKE stuurfile voor ZIE
+    ZIELEES  C       Source leesoperaties ZIE
+    ZIELEES  H
+

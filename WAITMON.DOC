@@ -1,0 +1,34 @@
+    Handleiding    WAITMON - tonen percentage wachttijd                       1
+    ---------------------------------------------------------------------------
+
+                   ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                   ³               Waitmon                 ³
+                   ³              versie 1.0               ³
+                   ³                                       ³
+                   ³      (c) 1990, R.A. van Wier RI       ³
+                   ³      Alle rechten voorbehouden.       ³
+                   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+                   Gebruik en distributie van deze software is kosteloos.
+
+    Samenvatting   WAITMON is een programma dat constant op het scherm laat
+                   zien hoeveel procent van uw tijd u zit te wachten op uw PC.
+
+                   Dit percentage van de tijd * het aantal gemeten uren * uw
+                   uurprijs kan een aardige hulp zijn om uw chef er te van
+                   overtuigen dat een snelle PC tot een besparing van kosten
+                   kan leiden.
+
+    Starten        Toets WAITMON in vanaf de DOS prompt.
+
+    Beperkingen    WAITMON kijkt per seconde of er door de programmatuur een
+                   aanroep is gedaan naar DOS, zoja dan telt dit als een wacht
+                   seconde. Deze meting gaat fout indien het programma geen
+                   gebruik maakt van DOS maar zware berekeningen uitvoert.
+                   Hierdoor is dit programma niet geschikt voor metingen
+                   tijdens het draaien van spreadsheet pakketten.
+
+    Informatie     R.A. van Wier
+                   C. Parkerstraat 14
+                   1066 GW  Amsterdam
+
